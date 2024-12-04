@@ -1,0 +1,48 @@
+body {
+    background-image: url("image/image\ 7.png");
+    background-size: cover;
+    background-color: #FFAF2E;
+    transition: background-color 0.5s ease; /* Smooth transition when background color changes */
+}
+
+.videos {
+    border-style: solid;
+    height: 500px;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.menu {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+}
+
+.guitar1, .guitar2, .guitar3, .guitar4 {
+    padding: 10px;
+    border-radius: 2px;
+    border-style: solid;
+    font-family: "Bayon", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 25px;
+    display: inline-block;
+    justify-content: center;
+    text-align: center;
+    background-color: #FFAF2E;
+    border-radius: 10px;
+    cursor: pointer; /* Add pointer cursor to show it's clickable */
+}
+
+.guitar2 {
+    background-color: #FFEA2B;
+}
+
+.guitar3 {
+    background-color: #BE79FF;
+}
+
+.guitar4 {
+    background-color: #FF3939;
+}

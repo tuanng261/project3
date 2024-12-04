@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bayon&family=Play:wght@400;700&display=swap" rel="stylesheet"> 
+    <title>Project 3</title>
+</head>
+<body>
+    <div class="videos">
+        <iframe id="videoPlayer" 
+                width="100%" 
+                height="100%" 
+                src="https://www.youtube.com/embed/0UrSJQNQgLM?autoplay=0" 
+                title="YouTube video player" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" 
+                allowfullscreen>
+        </iframe> 
+    </div>
+    <div class="audio-player">
+        <audio id="audioPlayer">
+            <source src="Audio/audio.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+    <div class="menu">
+        <div class="guitar1" id="guitar1">
+            <img src="image/guitar2.png">
+            <p>Chuck Berry 1950s</p>
+        </div>
+        <div class="guitar2" id="guitar2">
+            <img src="image/guitar4.png">
+            <p>Gibson Byrdland 1960s</p>
+        </div>
+        <div class="guitar3" id="guitar3">
+            <img src="image/guitar3.png">
+            <p>Fender Stratocaster 1970s</p>
+        </div>
+        <div class="guitar4" id="guitar4">
+            <img src="image/guitar1.png">
+            <p>Frankenstrat 1980s</p>
+        </div>
+    </div>
+    <script>
+        // Function to play video and audio and change background color
+        function playMedia(videoSrc, audioSrc, backgroundColor) {
+            // Change the video
+            const iframe = document.getElementById('videoPlayer');
+            iframe.src = videoSrc;
+
+            // Change the audio
+            const audio = document.getElementById('audioPlayer');
+            audio.pause(); // Stop any currently playing audio
+            audio.querySelector('source').src = audioSrc;
+            audio.load(); // Reload audio to apply the new source
+            audio.play();
+
+            // Change the background color
+            document.body.style.backgroundColor = backgroundColor;
+        }
+
+        // Guitar 1 click event
+        document.getElementById('guitar1').addEventListener('click', function () {
+            playMedia(
+                "https://www.youtube.com/embed/0UrSJQNQgLM?autoplay=1", // Video source for Guitar 1
+                "Audio/audio.mp3", // Audio source for Guitar 1
+                "#FFAF2E" // Background color for Guitar 1
+            );
+        });
+
+        // Guitar 2 click event
+        document.getElementById('guitar2').addEventListener('click', function () {
+            playMedia(
+                "https://www.youtube.com/embed/uJJY41lrKBU?autoplay=1", // Video source for Guitar 2
+                "Audio/audio2.mp3", // Audio source for Guitar 2
+                "#FFEA2B" // Background color for Guitar 2
+            );
+        });
+
+        // Guitar 3 click event
+        document.getElementById('guitar3').addEventListener('click', function () {
+            playMedia(
+                "https://www.youtube.com/embed/Ilw8nbOa-4U?autoplay=1", // Video source for Guitar 3
+                "Audio/audio3.mp3", // Audio source for Guitar 3
+                "#BE79FF" // Background color for Guitar 3
+            );
+        });
+
+        // Guitar 4 click event
+        document.getElementById('guitar4').addEventListener('click', function () {
+            playMedia(
+                "https://www.youtube.com/embed/j2L3lPghWn8?autoplay=1", // Video source for Guitar 4
+                "Audio/audio4.mp3", // Audio source for Guitar 4
+                "#FF3939" // Background color for Guitar 4
+            );
+        });
+    </script>
+</body>
+</html>
+
